@@ -24,6 +24,14 @@ namespace Logging
             }
         }
 
+        public ExternalManagementService GetManagement
+        {
+            get
+            {
+                return _management;
+            }
+        }
+
         public async Task Message(LogType type, string details)
         {
             string constructMessage = $"{DateTime.Now:T}: {type}: {details}";

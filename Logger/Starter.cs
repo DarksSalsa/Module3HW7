@@ -37,5 +37,10 @@ namespace Logging
                 }
             }
         }
+
+        public static void StartBackupOperation()
+        {
+            Logger.GetInstance.GetManagement.CreateBackup();
+        }
     }
 }

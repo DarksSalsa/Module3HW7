@@ -28,13 +28,11 @@ namespace Logging.Services
             }
 
             _fileService.CreateBackupFileName(_configuration.PathToReports, _configuration.PathToBackups);
-
-            // call FileService logic
         }
 
         private void ConfigurateInitialSetup()
         {
-            Logger.GetInstance.BackupHandler += CreateBackup;
+            Logger.GetInstance.BackupHandler += Starter.StartBackupOperation;
             _folderService.CheckOrCreateFolder(_configuration.PathToReports);
             _folderService.CheckOrCreateFolder(_configuration.PathToBackups);
             _flag = true;
